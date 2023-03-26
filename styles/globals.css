@@ -2,4 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+.t-btn {
+    border: 1px solid #C084FC;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.t-btn::after {
+    background: -webkit-linear-gradient(left, #3370a4, #C084FC);
+    border-radius: 20px;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: .2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+}
+
+.t-btn:hover::after {
+    transform: translate(0, 0);
+}
+
+.t-btn:hover {
+    border: 2px solid transparent;
+}
+
+.btn-text {
+    background: -webkit-linear-gradient(left, #3370a4, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: difference;
+}
+
 
